@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+  display:grid;
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-family: machine;
+}
+
+@font-face{
+  font-family: machine;
+  src: url(font.ttf)
+}

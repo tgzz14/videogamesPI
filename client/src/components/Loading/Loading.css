@@ -1,0 +1,10 @@
+.container-load {
+    margin: 10% 45%;
+}
+
+.info-load {
+    position: absolute;
+    text-align:center ;
+    top: 20%;
+    padding-left: 32px
+}

@@ -1,0 +1,36 @@
+.container-form{
+    font-size: 20px;
+    margin: 10px 50px;
+    text-align: justify;
+
+}
+
+.p {
+    color : red;
+    font-size: 12px;
+    font-weight: bolder;
+    padding: 0;
+    margin: 0;
+}
+
+.input-form {
+    background-color:  rgba(255, 255, 255, 0.159);
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+    color:bisque;
+
+}
+
+.select-form {
+    margin-top: 10px;
+    background-color:  rgba(255, 255, 255, 0.159);
+    border-radius: 5px;
+    color:bisque;
+    padding: 0 15px;
+}
+
+.description {
+    width: 240px;
+    height: 200px;
+}
