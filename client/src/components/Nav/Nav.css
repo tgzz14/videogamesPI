@@ -10,3 +10,15 @@
     width: 300px;
     opacity: 0.8;
 }
+
+
+@media (max-width: 779px) {
+    .nav {
+        width: 200px;
+        height: auto;
+    }
+
+    .bg {
+        width: 200px;
+    }
+}

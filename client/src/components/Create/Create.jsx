@@ -1,16 +1,20 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { getGenres } from '../../redux/action.js';
+import { getGenres, getVideogames, cleanVideogames, setLoading } from '../../redux/action.js';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import { validate } from './validate.js';
+import create from './create.jpg'
 import axios from 'axios';
 import './Create.css';
 
 export default function Create(){
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const genresDB = useSelector(state => state.genres)
     const [genres, setGenres] = useState([])
     const [platforms, setPlatforms] = useState([])
+    const [message, setMessage] = useState(false)
     const [form, setForm] = useState({
         name: '',
         description: '',
@@ -47,12 +51,36 @@ export default function Create(){
 
     const handleClick = async (e) => {
         e.preventDefault()
-        await axios.post(`http://localhost:3001/videogames`, form )
+        if(errors.name || errors.description || errors.platforms || errors.genres || errors.rating || errors.image || errors.released || !form.name || !form.description || !form.platforms || !form.genres || !form.rating || !form.image || !form.released){
+            alert('complete the form correctly')
+        } else {
+            await axios.post(`http://localhost:3001/videogames`, form ).then(()=> setMessage(true))
+        }
     }
 
+    const handleHomeClick = (e) => {
+        e.preventDefault()
+        dispatch(getVideogames());
+        dispatch(setLoading(true))
+        navigate('/home')
+    }
 
-   console.log(form)
+    const handleRestart = (e) => {
+        e.preventDefault();
+        setForm({
+            name: '',
+            description: '',
+            platforms: [],
+            released: '',
+            rating: 1,
+            image: '',
+            genres: []
+        })
+        setMessage(false)
+    }
+
     useEffect(() => {
+        dispatch(cleanVideogames())
         dispatch(getGenres())
         setForm({...form, 
             genres: genres,
@@ -105,10 +133,14 @@ export default function Create(){
                 <br/>
                 <textarea name='description' id='description' className='input-form description' onChange={handleInputChange} />
                 <p className='p'>{errors.description}</p>
-
-            <button onClick={handleClick}>created</button>
+            {
+                message ? <h1 className='message-create'>GAME CREATE SUCCEFULLY!</h1> : false
+            }
+            <button className='btn' onClick={handleClick}>created</button>
+            <button className='btn' onClick={handleHomeClick}>Go home</button>
+            <button className='btn' onClick={handleRestart}>Reset</button>
             </form>
-           
+            <img src={create} className='img-create' alt='create' />
         </div>
     )
 }

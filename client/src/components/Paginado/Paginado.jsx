@@ -3,48 +3,38 @@ import { useSelector, useDispatch } from 'react-redux';
 import {setCurrentPage} from '../../redux/action.js'
 import "./Paginado.css";
 
-export default function Paginado({videogamePerPage, videogames, paginado}){
+export default function Paginado({videogamePerPage, videogames}){
 
     const dispatch = useDispatch();
     const currentPage = useSelector(state => state.currentPage)
-    const pageNumbers = [];
     const next = () => dispatch(setCurrentPage(currentPage + 1))
     const prev = () => dispatch(setCurrentPage(currentPage - 1))
-
-    for( let i = 0; i < Math.ceil(videogames/videogamePerPage); i++){
-        pageNumbers.push(i + 1)
-    }
-
-   
+    const lengthPage = Math.ceil(videogames/videogamePerPage)
 
     return(
         <div className="div">
-{/* {            <ul className='page'>
-            {
-                pageNumbers && pageNumbers.map(num =>
-                    <li key={num}>
-                        <a  onClick={() => paginado(num)}>{num}</a>
-                    </li>
-                )
-            }
-            </ul> }   */}
+
           
-            {
-                currentPage === 1 && pageNumbers.length ?
+            {   currentPage === 1 && !lengthPage ? false :
+                currentPage === 1 && lengthPage === 1  ?
                 ( <>
-                  <span> {currentPage} de {pageNumbers.length}</span>
-                  <a className='next' onClick={next}> next </a>
+                  <span> {currentPage} de {lengthPage}</span>
                 </>) 
-                : currentPage < pageNumbers.length && currentPage !== 1 ? 
+                : currentPage === 1 && lengthPage > 1 ?
+                 ( <>
+                    <span> {currentPage} de {lengthPage}</span>
+                    <a className='next' onClick={next}> next </a>
+                  </>) 
+                : currentPage < lengthPage && currentPage !== 1 ? 
                 ( <>
                 <a className='prev' onClick={prev}> previous </a> 
-                <span>{currentPage} de {pageNumbers.length}</span>
+                <span>{currentPage} de {lengthPage}</span>
                 <a  className='next' onClick={next}> next </a>
                 </>) 
-                : pageNumbers.length ? 
+                : 
                 <>
-                <a className='prev' onClick={prev}> previous </a><span>{currentPage} de {pageNumbers.length}</span>
-                </> : ''
+                <a className='prev' onClick={prev}> previous </a><span>{currentPage} de {lengthPage}</span>
+                </> 
             }
            
 

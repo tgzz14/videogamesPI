@@ -16,11 +16,11 @@ const rootReducer = (state = initialState, action) => {
                 backUpVideogames: action.payload,
             };
         case "FILTER_BY_GENRE":
-            const filter =  state.backUpVideogames.filter( (el) => 
+            const filter =  state.backUpVideogames?.filter( (el) => 
             el.genres?.find(genre => genre === action.payload))
             return{
                 ...state,
-                videogames: filter
+                videogames: [...filter]
             };
         case "ORDER_ALPHA":
            
@@ -49,23 +49,23 @@ const rootReducer = (state = initialState, action) => {
                 })
                 return{
                     ...state,
-                    videogames: [...orderVideogames]
+                    videogames: orderVideogames
     
                 };
         case 'FILTER_BY_SOURCE':
-            const filterSrc = state.backUpVideogames.filter(el => {
+            const filterSrc = state.backUpVideogames?.filter(el => {
                 if(action.payload === 'DB')  return el.createdByDB === true;
                     return el.createdByDB === false;
             })
             return{
                 ...state,
-                videogames: [...filterSrc]
+                videogames: filterSrc
             };
         case 'FIND_BY_NAME':
             return{
                 ...state,
-                videogames:[...action.payload],
-                backUpVideogames: [...action.payload],
+                videogames: action.payload,
+                backUpVideogames: action.payload,
             };
         case 'ORDER_BY_RATING':
             const orderRating = state.backUpVideogames?.sort( (a,b) => {
@@ -75,10 +75,9 @@ const rootReducer = (state = initialState, action) => {
                     return b.rating - a.rating
                 }
             })
-            console.log(orderRating)
             return {
                 ...state,
-                videogames: [...orderRating]
+                videogames: orderRating
             };
         case 'GET_DETAIL':
             return {
@@ -105,6 +104,11 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 currentPage: action.payload
+            }
+        case 'CLEAN_VIDEOGAMES':
+            return {
+                ...state,
+                videogames: []
             }
         default:
             return {

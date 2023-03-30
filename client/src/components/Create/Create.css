@@ -1,6 +1,6 @@
 .container-form{
-    font-size: 20px;
-    margin: 10px 50px;
+    font-size: 15px;
+    margin: 5px 70px;
     text-align: justify;
 
 }
@@ -8,7 +8,7 @@
 .p {
     color : red;
     font-size: 12px;
-    font-weight: bolder;
+    font-weight: bold;
     padding: 0;
     margin: 0;
 }
@@ -32,5 +32,24 @@
 
 .description {
     width: 240px;
-    height: 200px;
+    height: 170px;
+}
+
+.img-create {
+    position:absolute;
+    top: 0;
+    left: 40%;
+    width: 55%;
+    height: 100%;
+    border-style:none ;
+}
+
+.message-create {
+    animation-name: name;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    position:absolute;
+    top: 20%;
+    left: 50%;
+    z-index: 1;
 }

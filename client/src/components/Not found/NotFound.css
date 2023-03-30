@@ -1,0 +1,20 @@
+.nf-container {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+
+}
+
+@media (max-width: 779px) {
+    .nf-container {
+        left: 60%;
+    }
+
+    .img-nf {
+        width: 130px;
+    }
+
+    .h1-nf {
+        font-size: small;
+    }
+}

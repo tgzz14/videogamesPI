@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { findByName } from '../../redux/action.js';
+import { findByName, setCurrentPage } from '../../redux/action.js';
 import { useDispatch } from 'react-redux';
 import './SearchBar.css'
 
@@ -9,9 +9,14 @@ export default function SearchBar(){
 
     const [name, setName] = useState("");
     const handleChange = (e) => setName(e.target.value);
-    const onSearch = (e) => {
-        e.preventDefault()
-        dispatch(findByName(name))
+    const onSearch = () => {
+
+        if(!name) {
+            alert('the field is empty')
+        } else {
+            dispatch(findByName(name));
+            dispatch(setCurrentPage(1))
+        }
     }
 
     return(

@@ -48,7 +48,7 @@ export const findByName = (value) => {
             })
             
         } catch (error) {
-            console.log(error.message)
+            alert(error.response.data)
         }
     }
 }
@@ -71,7 +71,7 @@ export const getDetail = (id) => {
             })
             
         } catch (error) {
-            console.log(error.message)
+            alert(error.response.data)
         }
 
     }
@@ -86,7 +86,7 @@ export const getGenres = () => {
                 payload: result.data
             })
         } catch (error) {
-            console.log(error.message)
+            alert(error.response.data)
         }
     }
 }
@@ -111,3 +111,8 @@ export const setCurrentPage = (value) => {
     }
 }
 
+export const cleanVideogames = () => {
+    return {
+        type: 'CLEAN_VIDEOGAMES'
+    }
+}

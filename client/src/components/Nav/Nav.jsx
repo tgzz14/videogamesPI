@@ -1,11 +1,20 @@
 import SearchBar from '../SearchBar/SearchBar.jsx';
 import FilterAndOrder from '../Filtrado/Filtrado.jsx';
 import game from './games.png';
-import {NavLink} from 'react-router-dom';
+import {useDispatch} from 'react-redux'
+import { NavLink } from 'react-router-dom';
 import './Nav.css'
+import { cleanVideogames, getVideogames, setCurrentPage, setLoading } from '../../redux/action.js';
 
 
 export default function Nav(){
+    const dispatch = useDispatch()
+    const handleClick = () => {
+        dispatch(cleanVideogames())
+        dispatch(setLoading(true))
+        dispatch(getVideogames())
+        dispatch(setCurrentPage(1))
+    }
 
     return (
         <div className='nav'>
@@ -14,6 +23,7 @@ export default function Nav(){
             <label>Create new videogames: </label><NavLink to="/create">Click here!</NavLink>
             <SearchBar  />
             <FilterAndOrder /> 
+            <button className='btn' onClick={handleClick}>Reset</button>
         </div>
     )
 }

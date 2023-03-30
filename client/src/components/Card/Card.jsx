@@ -6,6 +6,7 @@ export default function Card({image, name, genres, rating, id}){
     
     return(
         <div className='container'>
+            <div className='card2'>
             <NavLink className='link' to={`/detail/${id}`}>
                 <img src={image} alt={name} className='img text' />
                 <h3 className='text'>{name}</h3>
@@ -16,6 +17,7 @@ export default function Card({image, name, genres, rating, id}){
                 }
                 </ul>
             </NavLink>
+            </div>
         </div>
     )
 }

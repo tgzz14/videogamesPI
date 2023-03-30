@@ -2,9 +2,15 @@
     margin: 10% 45%;
 }
 
-.info-load {
-    position: absolute;
-    text-align:center ;
-    top: 20%;
-    padding-left: 32px
+@media (max-width: 539px) {
+    .container-load {
+        margin: 15% 55%;
+    }
+
+    .img-load {
+        width: 150px;
+    }
 }
+
+
+

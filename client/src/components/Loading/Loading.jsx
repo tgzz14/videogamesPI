@@ -5,8 +5,7 @@ export default function Loading(){
 
     return(
         <div className='container-load'>
-            <img src={load} alt='...loading'/>
-            <h1 className='info-load'>LOADING</h1>
+            <img src={load} className='img-load' alt='...loading'/>
         </div>
     )
 

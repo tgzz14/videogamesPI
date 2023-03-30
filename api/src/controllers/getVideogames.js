@@ -12,7 +12,7 @@ const getVideogames = async (req, res) => {
           let allGamesByName = videogamesFindBD.concat(videogameFindAPI);
 
           if(allGamesByName.length < 1){ 
-            throw new Error('this video game not exists');
+            res.status(400).json('this video game not exists')
            } else {
                allGamesByName.length > 15 ?  allGamesByName.length = 15 : '';
                console.log(allGamesByName.length)

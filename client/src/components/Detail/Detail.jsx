@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { getDetail, setLoading, cleanDetail } from '../../redux/action.js';
+import { getDetail, cleanDetail } from '../../redux/action.js';
 import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,13 +10,12 @@ export default function Detail(){
     const {detailId} = useParams()
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const {detail, isLoading} = useSelector( state => state)
+    const { detail } = useSelector( state => state)
     
 
     useEffect(() => {
-        setTimeout(() =>{
-            dispatch(getDetail(detailId)).then(() => dispatch(setLoading(true)))
-        },1000)
+
+        dispatch(getDetail(detailId))
         
         return () => dispatch(cleanDetail())
     },[detailId])
@@ -25,10 +24,10 @@ export default function Detail(){
         <div>
             
             {
-                isLoading === false ? <Loading /> : detail.id ?  ( 
+                 detail.id ?  ( 
                 <div className='container-detail'>
-                <h1>{detail.id}</h1>
-                <h1>{detail.name?.toUpperCase()} <span className='rating' >{detail.rating}</span></h1>
+                <h1 className='title-detail'>{detail.id}</h1>
+                <h1 className='title-detail'>{detail.name?.toUpperCase()} <span className='rating' >{detail.rating}</span></h1>
                 <img className='img-detail' src={detail.image} alt={detail.name} />
                 <h3>released date: {detail.released}</h3>
                 <p>{detail.description}</p>
@@ -45,10 +44,10 @@ export default function Detail(){
                 }
                 </ul>
                 <div className='container-button'>
-                <button className='btn-detail' onClick={() =>{navigate('/home')}}>go Home!</button>
+                <button className='btn' onClick={() =>{navigate(-1)}}>go Home!</button>
                 </div>
                 </div>
-                ) : ''
+                ) : <Loading /> 
             }
 
         </div>
