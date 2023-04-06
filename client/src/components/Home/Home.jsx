@@ -21,8 +21,7 @@ export default function Home(){
         if( !videogames.length ){
             dispatch(getVideogames()).then(() => dispatch(setLoading(false)))
         }
-    },[videogames]) 
-
+    },[]) 
 
     return(
         <div className='container-home'>

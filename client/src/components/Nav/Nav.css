@@ -22,3 +22,14 @@
         width: 200px;
     }
 }
+
+@media (max-width: 300px) {
+    .nav {
+        width: 150px;
+        height: auto;
+    }
+
+    .bg {
+        width: 150px;
+    }
+}

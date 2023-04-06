@@ -6,13 +6,11 @@ import './Filtrado.css'
 
 export default function FilterAndOrder() {
     const dispatch = useDispatch();
-    const {genres, videogames} = useSelector(state => state)
+    const {genres} = useSelector(state => state)
 
     useEffect(() => {
         dispatch(getGenres())
     },[])
-    
-    console.log(videogames)
 
     const handleBySource = (e) => {
         dispatch(filterBySource(e.target.value)); 
@@ -36,30 +34,30 @@ export default function FilterAndOrder() {
 
     return(
         <div className='filter'>
-                <label>Filter by create:&nbsp;&nbsp;&nbsp;
-                <select className='select' onChange={handleBySource}>
-                    <option disabled selected>Select one</option>
+                <label>Filter by create:
+                <select className='select' onChange={handleBySource} defaultValue=''>
+                    <option disabled value=''>Select one</option>
                     <option value='API'>By API</option>
                     <option value='DB'>By BD</option>
                 </select>
                 </label>
-                <label>Filter by rating:&nbsp;&nbsp;&nbsp;
-                <select className='select' onChange={handleByRating}>
-                    <option disabled selected>Select one</option>
+                <label>Filter by rating:
+                <select className='select' onChange={handleByRating} defaultValue=''>
+                    <option disabled value=''>Select one</option>
                     <option value='High'>+ rating</option>
                     <option value='Low'>- rating</option>
                 </select>
                 </label>
                 <label>Order Alphabetic: 
-                <select className='select' onChange={handleAlphabetic}>
-                <option disabled selected>Select one</option>
+                <select className='select' onChange={handleAlphabetic} defaultValue=''>
+                <option disabled value=''>Select one</option>
                     <option value='Asc'>Order A-Z</option>
                     <option value='Desc'>Order Z-A</option>
                 </select>
                 </label>
-                <label>Filter by genre:&nbsp;&nbsp;&nbsp;&nbsp;
-                <select className='select' onChange={handleByGenre}>
-                    <option disabled selected>Select one</option>
+                <label>Filter by genre:
+                <select className='select' onChange={handleByGenre} defaultValue=''>
+                    <option value='' >Select one</option>
                     {
                         genres?.map(genre => <option value={genre} key={genre}>{genre}</option>)
                     }

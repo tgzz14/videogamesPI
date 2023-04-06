@@ -6,9 +6,9 @@ import './SearchBar.css'
 export default function SearchBar(){
 
     const dispatch = useDispatch()
-
     const [name, setName] = useState("");
     const handleChange = (e) => setName(e.target.value);
+
     const onSearch = () => {
 
         if(!name) {

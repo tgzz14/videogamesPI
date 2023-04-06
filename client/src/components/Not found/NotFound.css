@@ -7,11 +7,25 @@
 
 @media (max-width: 779px) {
     .nf-container {
+        left: 55%;
+    }
+
+    .img-nf {
+        width: 150px;
+    }
+
+    .h1-nf {
+        font-size: small;
+    }
+}
+
+@media (max-width: 300px) {
+    .nf-container {
         left: 60%;
     }
 
     .img-nf {
-        width: 130px;
+        width: 80px;
     }
 
     .h1-nf {

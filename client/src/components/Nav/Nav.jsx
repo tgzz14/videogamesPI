@@ -4,14 +4,11 @@ import game from './games.png';
 import {useDispatch} from 'react-redux'
 import { NavLink } from 'react-router-dom';
 import './Nav.css'
-import { cleanVideogames, getVideogames, setCurrentPage, setLoading } from '../../redux/action.js';
-
+import { setCurrentPage, getVideogames } from '../../redux/action.js';
 
 export default function Nav(){
     const dispatch = useDispatch()
     const handleClick = () => {
-        dispatch(cleanVideogames())
-        dispatch(setLoading(true))
         dispatch(getVideogames())
         dispatch(setCurrentPage(1))
     }

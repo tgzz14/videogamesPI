@@ -4,6 +4,9 @@ import Landing from './components/LandingPage/Landing.jsx';
 import Home from './components/Home/Home.jsx';
 import Detail from './components/Detail/Detail.jsx';
 import Create from './components/Create/Create.jsx';
+import Modal from "react-modal";
+
+Modal.setAppElement("#root");
 
 function App() {
 

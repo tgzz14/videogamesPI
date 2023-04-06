@@ -1,5 +1,5 @@
 import './NotFound.css';
-import notFound from './notFound.jpg'
+import notFound from './nf.jpg'
 
 export default function NotFound() {
 

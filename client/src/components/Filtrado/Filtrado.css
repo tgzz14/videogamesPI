@@ -1,6 +1,5 @@
 .filter {
     display: flex;
-    align-items: flex-start;
     flex-direction: column;
     padding: 15px;
 }
@@ -8,12 +7,12 @@
 .select {
     width: 100px;
     margin-bottom: 10px;
-    background-color:  rgba(255, 255, 255, 0.159);
+    background-color: rgba(255, 255, 255, 0.159);
     border-radius: 5px;
-    color:bisque;
+    color: bisque;
     font-weight: bolder;
-    margin-left: 10px;
-}
+    float: right;
+} 
 
 .select option {
     background-color: rgb(0, 0, 0);
@@ -36,6 +35,20 @@ Label {
     .select {
         width: 70px;
         font-size: 10px;
+        padding: 0;
+    }
+}
+
+
+@media (max-width: 300px) {
+    .filter {
+        font-size: 8px;
+        padding: 2px;
+    }
+
+    .select {
+        width: 50px;
+        font-size: 8px;
         padding: 0;
     }
 }
