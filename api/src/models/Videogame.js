@@ -24,7 +24,7 @@ module.exports = (sequelize) => {
     },
     image: {
       type: DataTypes.STRING,
-      allowNull: false,
+      defaultValue: 'https://cl.buscafs.com/www.levelup.com/public/uploads/images/723642/723642_1280x960.jpg'
     },
     released: {
       type: DataTypes.STRING,

@@ -4,7 +4,7 @@ const postVideogame = async (req, res) => {
 try {
     const { name, description, platforms, image, released, rating, genres } = req.body; 
 
-    if(!name || !description || !platforms || !image || !released || !rating || !genres) {
+    if(!name || !description || !platforms || !released || !rating || !genres) {
     throw Error('complete necessary information')
 
     } else {
