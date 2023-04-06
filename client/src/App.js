@@ -5,6 +5,8 @@ import Home from './components/Home/Home.jsx';
 import Detail from './components/Detail/Detail.jsx';
 import Create from './components/Create/Create.jsx';
 import Modal from "react-modal";
+import axios from 'axios';
+axios.defaults.baseURL = 'http://localhost:3001/'
 
 Modal.setAppElement("#root");
 

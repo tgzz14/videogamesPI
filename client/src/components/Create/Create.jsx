@@ -53,7 +53,7 @@ export default function Create(){
         if(errors.name || errors.description || errors.platforms || errors.genres || errors.rating || errors.image || errors.released || !form.name || !form.description || !form.platforms || !form.genres || !form.rating || !form.image || !form.released){
             alert('complete the form correctly')
         } else {
-            await axios.post('http://localhost:3001/videogames', form )
+            await axios.post('/videogames', form )
             alert('GAME CREATE SUCCEFULLY!')
             dispatch(cleanVideogames());
             dispatch(setCurrentPage(1))
