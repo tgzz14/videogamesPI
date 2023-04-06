@@ -32,7 +32,7 @@ export default function Create(){
         image: '',
         genres: ''
     })
-
+    console.log(form.released)
     const handleInputChange= (e) => {
         if([e.target.name].includes('genres')){
             if(genres.indexOf(e.target.value) === -1)

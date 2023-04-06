@@ -29,7 +29,11 @@ if(!data.rating) {
     errors.rating = 'The range should be between 0 and 5';
 }
 
-if(!data.released) errors.released = 'Obligatory field ';
+if(!data.released) {
+    errors.released = 'Obligatory field ';
+} else if(Number(data.released.split('-')[0]) < 1952 || data.released.split('-')[2] === '01') {
+    errors.released = 'the released date should be after 1952-01-01';
+}
 
 if(!data.rating) {
     errors.rating = 'Obligatory field ';

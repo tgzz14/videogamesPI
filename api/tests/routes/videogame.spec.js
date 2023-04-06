@@ -15,7 +15,7 @@ const videogame = {
   description: 'example',
   platforms: ['nintendo'],
   rating: 1.2,
-  released: '12-02-2015',
+  released: '2015-01-25',
   image: 'img'
 };
 

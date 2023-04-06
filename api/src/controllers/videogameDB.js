@@ -37,7 +37,7 @@ const videogameDB = async () => {
                 }
             }
         })
-        arr.push({name: vg.name, id: vg.id, image: vg.image, rating: vg.rating, createdByDB: vg.createdByDB, genres: vg.Genres?.map(el => el['name'])});
+        arr.push({name: vg.name, id: vg.id, image: vg.image, rating: vg.rating, createdByDB: vg.createdByDB, genres: vg.Genres?.map(el => el.name)});
     })
     
 
