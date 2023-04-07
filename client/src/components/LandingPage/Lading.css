@@ -1,6 +1,6 @@
 .container-landing {
     background-image: url('./landing.jpg');
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position:center;
     position:absolute;
@@ -16,6 +16,7 @@
     position:absolute;
     top: 30%;
     left: 40%;
+    
     border-style: none;
     border-radius: 5px;
     padding: 8px 15px;
@@ -51,3 +52,48 @@
    75% {color: rgb(0, 0, 255);} 
   100% {color: rgb(255, 0, 0);} 
 }
+
+@media (max-width: 820px) {
+    .btn-landing{
+        left: 30%;
+    }
+    .btn-landing:hover{
+        left: 5%
+    }
+}
+
+
+@media (max-width: 550px) {
+    .btn-landing{
+        font-size: 30px;
+        left: 30%;
+    }
+    .btn-landing:hover{
+        left: 5%
+    }
+}
+
+@media (max-width: 415px) {
+    .btn-landing{
+        font-size: 25px;
+    }
+
+}
+
+@media (max-width: 370px) {
+    .btn-landing{
+        font-size: 20px;
+
+    }
+
+}
+
+@media (max-width: 280px) {
+    .btn-landing{
+        font-size: 15px;
+
+    }
+
+}
+
+

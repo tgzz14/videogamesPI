@@ -47,7 +47,9 @@ export default function Detail(){
                 <button className='btn' onClick={() =>{navigate(-1)}}>go Home!</button>
                 </div>
                 </div>
-                ) : <Loading /> 
+                ) : <div className='loading-css'>
+                    <Loading /> 
+                </div>
             }
 
         </div>

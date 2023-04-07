@@ -79,6 +79,7 @@ export default function Create(){
     return(
         <div className='container-form' >
             <form>
+            <h4 className='title'>CREATE NEW  VIDEOGAME</h4>
                 <label htmlFor='name'>Name:&nbsp;&nbsp;&nbsp;</label>
                 <input type='text' name='name' id='name' className='input-form' onChange={handleInputChange} />
                 <p className='p'>{errors.name}</p>

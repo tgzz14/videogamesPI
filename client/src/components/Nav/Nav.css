@@ -16,12 +16,15 @@
     .nav {
         width: 200px;
         height: auto;
+        margin: 0;
+        padding: 0;
     }
 
     .bg {
         width: 200px;
     }
 }
+
 
 @media (max-width: 300px) {
     .nav {

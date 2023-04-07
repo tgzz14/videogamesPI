@@ -15,6 +15,12 @@
     content: '⟫'
 }
 
+@media (max-width: 950px) {
+    .div {
+        padding-right: 50px;
+    }
+}
+
 
 
 
