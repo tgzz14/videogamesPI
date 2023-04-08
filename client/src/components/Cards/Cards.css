@@ -3,6 +3,7 @@
     display:grid;
     grid-template-columns: repeat(auto-fill, 17vw);
     margin-left: 25vw;
+    height: fit-content;
    
 }
 
