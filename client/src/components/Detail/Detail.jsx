@@ -26,30 +26,26 @@ export default function Detail(){
             {
                  detail.id ?  ( 
                 <div className='container-detail'>
+                <n1 className='h1-home' onClick={() =>{navigate(-1)}}>Go home... </n1>
                 <h1 className='title-detail'>{detail.id}</h1>
                 <h1 className='title-detail'>{detail.name?.toUpperCase()} <span className='rating' >{detail.rating}</span></h1>
                 <img className='img-detail' src={detail.image} alt={detail.name} />
                 <h3>released date: {detail.released}</h3>
                 <p>{detail.description}</p>
-                <label>Platforms: </label>
+                Platforms:
                 <ul className='ul-detail'>
                 {
                     detail.platforms?.map(platform => <li className='li-detail' key={platform}>{platform}</li>)
                 }
                 </ul>
-                <label>Genres: </label>
+                Genres: 
                 <ul className='ul-detail'>
                 {
                     detail.Genres? detail.Genres.map(genre => <li className='li-detail' key={genre.name}>{genre.name}</li>) : (detail.genres?.map(genre => <li className='li-detail' key={genre}>{genre}</li>))
                 }
                 </ul>
-                <div className='container-button'>
-                <button className='btn' onClick={() =>{navigate(-1)}}>go Home!</button>
                 </div>
-                </div>
-                ) : <div className='loading-css'>
-                    <Loading /> 
-                </div>
+                ) : <Loading /> 
             }
 
         </div>

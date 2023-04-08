@@ -1,13 +1,18 @@
 .container-card {
     justify-content: center;
     display:grid;
-    grid-template-columns: repeat(auto-fill, 15em);
-    margin-left: 300px;
+    grid-template-columns: repeat(auto-fill, 17vw);
+    margin-left: 25vw;
+   
 }
 
-@media (max-width: 779px) {
-    .container-card {
-        margin-left: 200px;
-    }
+.btn-open{
+    position: absolute;
+    z-index: 1;
+    margin:-1vw 0vw;
+    background-color: rgba(22, 1, 1, 0.815);
+    color: whitesmoke;
+    border-style: none;
+    cursor: pointer;
+    display: none;
 }
-

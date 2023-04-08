@@ -1,18 +1,44 @@
 .filter {
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    margin-left: 0;
+    padding: 0;
+
 }
 
 .select {
-    width: 100px;
-    margin-bottom: 10px;
+   
+    margin-bottom: 8px;
+    margin-right: 2vw;
     background-color: rgba(255, 255, 255, 0.159);
     border-radius: 5px;
     color: bisque;
     font-weight: bolder;
+    font-size: 0.9vw;
     float: right;
+    width: 9vw;
 } 
+
+.btn {
+    background-image: linear-gradient(163deg, #3e3d3d 0%, #b1a0e9 100%);
+    margin:4px;
+    border-style: none;
+    border-radius: 5px;
+    padding: 5px 0px;
+    cursor:pointer;
+    align-self: center;
+    width:7vw;
+    font-size: 1vw;
+}
+
+.btn:hover {
+    background-image: linear-gradient(163deg, #5e1717 0%, #131314 100%);
+    color:rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px 5px rgba(255, 255, 255, 0.3);
+}
+
+
 
 .select option {
     background-color: rgb(0, 0, 0);
@@ -24,31 +50,7 @@
 
 Label {
     color: white;
-}
-
-@media (max-width: 779px) {
-    .filter {
-        font-size: 10px;
-        padding: 5px;
-    }
-
-    .select {
-        width: 70px;
-        font-size: 10px;
-        padding: 0;
-    }
-}
-
-
-@media (max-width: 300px) {
-    .filter {
-        font-size: 8px;
-        padding: 2px;
-    }
-
-    .select {
-        width: 50px;
-        font-size: 8px;
-        padding: 0;
-    }
+    padding: 0;
+    margin: 0;
+    font-size: 1vw;
 }

@@ -80,22 +80,22 @@ export default function Create(){
         <div className='container-form' >
             <form>
             <h4 className='title'>CREATE NEW  VIDEOGAME</h4>
-                <label htmlFor='name'>Name:&nbsp;&nbsp;&nbsp;</label>
+                <label className='label' htmlFor='name'>*Name:&nbsp;&nbsp;&nbsp;</label>
                 <input type='text' name='name' id='name' className='input-form' onChange={handleInputChange} />
                 <p className='p'>{errors.name}</p>
                 
-                <label htmlFor='released'>Released date: </label>
+                <label className='label' htmlFor='released'>*Released date: </label>
                 <input type='date' name='released' id='released' className='input-form' onChange={handleInputChange} />
                 <p className='p'>{errors.released}</p>
 
-                <label htmlFor='rating'>Rating:&nbsp;&nbsp;</label>
+                <label className='label' htmlFor='rating'>*Rating:&nbsp;&nbsp;</label>
                 <input type='number' name='rating' id='rating' className='input-form' onChange={handleInputChange} />
                 <p className='p'>{errors.rating}</p>
 
-                <label htmlFor='image'>Image:&nbsp;&nbsp;</label>
+                <label className='label' htmlFor='image'>Image:&nbsp;&nbsp;</label>
                 <input type="text" name='image' id='image' className='input-form' onChange={handleInputChange} />
                 <br/>
-                <label htmlFor='platforms'>Platforms:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <label className='label' htmlFor='platforms'>*Platforms:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <select className='select-form' onChange={handleInputChange} name='platforms' id='platforms' multiple>
                     <option value='PC'>PC</option>
                     <option value='Playstation'>Playstation</option>
@@ -108,7 +108,7 @@ export default function Create(){
                 </select>
                 <p className='p'>{errors.platforms}</p>
                 <br />
-                <label htmlFor='genres'>Genres: </label>
+                <label className='label' htmlFor='genres'>*Genres: </label>
                 <select className='select-form' onChange={handleInputChange} name='genres' id='genres' multiple>
                 {   
                     genresDB?.map(genre => (
@@ -118,7 +118,7 @@ export default function Create(){
                 </select>
                 <p className='p'>{errors.genres}</p>
 
-                <label htmlFor='description'>Description: </label>
+                <label className='label' htmlFor='description'>*Description: </label>
                 <br/>
                 <textarea name='description' id='description' className='input-form description' onChange={handleInputChange} />
                 <p className='p'>{errors.description}</p>
@@ -127,6 +127,7 @@ export default function Create(){
             <button className='btn' onClick={handleHomeClick}>Go home</button>
             </form>
             <img src={create} className='img-create' alt='create' />
+            <p>Obligatory's field are with this sign (*)</p>
         </div>
     )
 }

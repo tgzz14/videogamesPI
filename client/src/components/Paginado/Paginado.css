@@ -1,6 +1,7 @@
 .div {
     text-align: right;
-    margin-right: 20px;
+    margin-right: 2vw;
+    font-size: 1vw;
 }
 
 .prev, .next {
@@ -13,12 +14,6 @@
 
 .next::after {
     content: '⟫'
-}
-
-@media (max-width: 950px) {
-    .div {
-        padding-right: 50px;
-    }
 }
 
 

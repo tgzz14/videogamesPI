@@ -5,6 +5,10 @@
 
 }
 
+.label {
+    font-size: 15px;
+}
+
 .title{
     padding: 0;
     margin: 5px 10px;
@@ -76,6 +80,10 @@
 }
 
 @media (max-width: 950px) {
+    .label {
+        font-size: 10px;
+    }
+    
     .img-create {
         position:absolute;
         top: 0;

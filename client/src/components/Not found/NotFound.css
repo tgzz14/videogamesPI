@@ -1,34 +1,14 @@
 .nf-container {
     position: absolute;
-    top: 20%;
-    left: 50%;
+    top: 10vw;
+    left: 50vw;
+}
+
+.img-nf{
+    width: 15vw;
 
 }
 
-@media (max-width: 779px) {
-    .nf-container {
-        left: 55%;
-    }
-
-    .img-nf {
-        width: 150px;
-    }
-
-    .h1-nf {
-        font-size: small;
-    }
-}
-
-@media (max-width: 300px) {
-    .nf-container {
-        left: 60%;
-    }
-
-    .img-nf {
-        width: 80px;
-    }
-
-    .h1-nf {
-        font-size: small;
-    }
+.h1-nf{
+    font-size: 2vw;
 }

@@ -1,18 +1,37 @@
 .nav {
+    font-size: medium;
     float: left;
     background-color: rgb(0, 0, 0);
-    width: 300px;
-    height: 100%;
+    width: 25vw; /* 300 */
+    height:100%;
     position:fixed;
+    font-size: small;
+    /* nuevo */
+    z-index: 1;
+    overflow-x: hidden;
+    transition: 0.5s;
 }
 
 .bg {
-    width: 300px;
+    width: 25vw;
     opacity: 0.8;
 }
 
+.btn-close{
+    position: absolute;
+    z-index: 1;
+    margin: 1vw 0vw;
+    background-color: rgba(22, 1, 1, 0.815);
+    color: whitesmoke;
+    border-style: none;
+    cursor: pointer;
 
-@media (max-width: 779px) {
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+/* @media (max-width: 779px) {
     .nav {
         width: 200px;
         height: auto;
@@ -35,4 +54,4 @@
     .bg {
         width: 150px;
     }
-}
+} */
