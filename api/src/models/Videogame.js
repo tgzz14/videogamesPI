@@ -32,7 +32,7 @@ module.exports = (sequelize) => {
       validate: {
         is:/^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/,
         isAfter: "1952-01-01",
-        isBefore:"2023-04-30" 
+        isBefore:"2023-05-01", 
       }
     },
     rating: {

@@ -20,7 +20,7 @@ export default function Create(){
         platforms: [],
         released: '',
         rating: 0,
-        image: '',
+        image: 'https://cl.buscafs.com/www.levelup.com/public/uploads/images/723642/723642_1280x960.jpg',
         genres: []
     })
     const [errors, setErrors] = useState({
