@@ -66,9 +66,9 @@ export default function FilterAndOrder() {
                     <option value='DB'>By BD</option>
                 </select>
                 </label>
-                <label>Filter by rating:
+                <label>Order by rating:
                 <select className='select' onChange={handleByRating} value={select.rating}>
-                    <option disabled value=''>Order by create</option>
+                    <option disabled value=''>Order by rating</option>
                     <option value='High'>+ rating</option>
                     <option value='Low'>- rating</option>
                 </select>
