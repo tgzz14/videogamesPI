@@ -68,7 +68,7 @@ export default function FilterAndOrder() {
                 </label>
                 <label>Filter by rating:
                 <select className='select' onChange={handleByRating} value={select.rating}>
-                    <option disabled value=''>Filter by create</option>
+                    <option disabled value=''>Order by create</option>
                     <option value='High'>+ rating</option>
                     <option value='Low'>- rating</option>
                 </select>
