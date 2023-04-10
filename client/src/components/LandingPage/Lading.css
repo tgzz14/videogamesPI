@@ -24,8 +24,7 @@
 }
 
 .btn-landing:hover:after {
-    content:"VIDEOGAMES PI!" url(./vg.png);
-
+    content:"VIDEOGAMES PI!";
 }
 
 .btn-landing:hover {

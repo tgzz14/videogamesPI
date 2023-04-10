@@ -50,7 +50,7 @@ export default function Create(){
 
     const handleClick = async (e) => {
         e.preventDefault()
-        if(errors.name || errors.description || errors.platforms || errors.genres || errors.rating || errors.image || errors.released || !form.name || !form.description || !form.platforms || !form.genres || !form.rating || !form.image || !form.released){
+        if(errors.name || errors.description || errors.platforms || errors.genres || errors.rating || errors.released || !form.name || !form.description || !form.platforms || !form.genres || !form.rating  || !form.released){
             alert('complete the form correctly')
         } else {
             await axios.post('/videogames', form )

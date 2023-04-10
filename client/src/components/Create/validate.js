@@ -31,9 +31,11 @@ if(!data.rating) {
 
 if(!data.released) {
     errors.released = 'Obligatory field ';
-} else if(Number(data.released.split('-')[0]) < 1952 || data.released.split('-')[2] === '01') {
+} else if(Number(data.released.split('-')[0]) <= 1952 && data.released.split('-')[2] === '01' && data.released.split('-')[1] === '01') {
     errors.released = 'the released date should be after 1952-01-01';
-}
+} else if(Number(data.released.split('-')[0]) >= 2023 && Number(data.released.split('-')[1]) > 4 ) {
+    errors.released = 'the released date should be before 2023-05-01';
+} 
 
 if(!data.rating) {
     errors.rating = 'Obligatory field ';
